@@ -1,6 +1,6 @@
 {
   "name": "barrelsby-alias",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Barrelsby fork providing an alias builder.",
   "main": "index.js",
   "scripts": {
