@@ -3,18 +3,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs");
 const path = require("path");
 const utilities_1 = require("./utilities");
+const alias_1 = require("./builders/alias");
 const fileSystem_1 = require("./builders/fileSystem");
 const flat_1 = require("./builders/flat");
 const modules_1 = require("./modules");
 function buildBarrels(destinations, options) {
     let builder;
     switch (options.structure) {
-        default:
-        case "flat":
-            builder = flat_1.buildFlatBarrel;
-            break;
         case "filesystem":
             builder = fileSystem_1.buildFileSystemBarrel;
+            break;
+        case "alias":
+            builder = alias_1.buildAliasBarrel;
+            break;
+        case "flat":
+        default:
+            builder = flat_1.buildFlatBarrel;
             break;
     }
     // Build the barrels.

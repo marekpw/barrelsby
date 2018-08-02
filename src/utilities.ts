@@ -21,6 +21,10 @@ export function convertPathSeparator(path: string): string {
     return path.replace(/\\+/g, "/");
 }
 
+export function toCamelCase(name: string): string {
+    return name.replace(/-([a-z])/g, (g) =>  g[1].toUpperCase());
+}
+
 export const isTypeScriptFile = /\.tsx?$/m;
 export const nonAlphaNumeric = /\W+/g;
 export const thisDirectory = /^\.[\\\/]/g;

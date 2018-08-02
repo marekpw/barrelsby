@@ -5,7 +5,7 @@ import {isTypeScriptFile} from "./utilities";
 
 export type LocationOption = "top" | "below" | "all" | "replace" | "branch";
 
-export type StructureOption = "flat" | "filesystem";
+export type StructureOption = "flat" | "filesystem" | "alias";
 
 export type QuoteCharacter = "\"" | "'";
 
@@ -87,7 +87,7 @@ function setUpArguments(): { argv: any } {
         .string("s")
         .alias("s", "structure")
         .describe("s", "The mode for structuring barrel file exports")
-        .choices("s", ["flat", "filesystem"])
+        .choices("s", ["flat", "filesystem", "alias"])
         .default("s", "flat")
 
         .boolean("q")

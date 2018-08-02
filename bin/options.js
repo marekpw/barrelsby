@@ -44,7 +44,7 @@ function setUpArguments() {
         .string("s")
         .alias("s", "structure")
         .describe("s", "The mode for structuring barrel file exports")
-        .choices("s", ["flat", "filesystem"])
+        .choices("s", ["flat", "filesystem", "alias"])
         .default("s", "flat")
         .boolean("q")
         .alias("q", "singleQuotes")

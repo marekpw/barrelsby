@@ -4,6 +4,7 @@ import * as path from "path";
 import {Options} from "./options";
 import {convertPathSeparator, Directory, Location, thisDirectory} from "./utilities";
 
+import {buildAliasBarrel} from "./builders/alias";
 import {buildFileSystemBarrel} from "./builders/fileSystem";
 import {buildFlatBarrel} from "./builders/flat";
 import {loadDirectoryModules} from "./modules";
@@ -11,12 +12,15 @@ import {loadDirectoryModules} from "./modules";
 export function buildBarrels(destinations: Directory[], options: Options): void {
     let builder: BarrelBuilder;
     switch (options.structure) {
-        default:
-        case "flat":
-            builder = buildFlatBarrel;
-            break;
         case "filesystem":
             builder = buildFileSystemBarrel;
+            break;
+        case "alias":
+            builder = buildAliasBarrel;
+            break;
+        case "flat":
+        default:
+            builder = buildFlatBarrel;
             break;
     }
     // Build the barrels.

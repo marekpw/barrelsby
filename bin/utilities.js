@@ -5,6 +5,10 @@ function convertPathSeparator(path) {
     return path.replace(/\\+/g, "/");
 }
 exports.convertPathSeparator = convertPathSeparator;
+function toCamelCase(name) {
+    return name.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+}
+exports.toCamelCase = toCamelCase;
 exports.isTypeScriptFile = /\.tsx?$/m;
 exports.nonAlphaNumeric = /\W+/g;
 exports.thisDirectory = /^\.[\\\/]/g;
