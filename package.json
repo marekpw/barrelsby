@@ -1,7 +1,7 @@
 {
-  "name": "barrelsby",
+  "name": "barrelsby-alias",
   "version": "1.0.2",
-  "description": "Automatic TypeScript barrels for your entire code base",
+  "description": "Barrelsby fork providing an alias builder.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf bin/",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bencoveney/barrelsby.git"
+    "url": "git+https://github.com/marekpw/barrelsby.git"
   },
   "keywords": [
     "TypeScript",
